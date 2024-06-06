@@ -2,55 +2,38 @@
 <html>
   <head>
     <title>Jovian Careers</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
-      h1 {
-        font-size: 40px;
-        font-family: Roboto, sans-serif; /* Added fallback font */
-        font-weight: normal;
-        color: rgb(0, 199, 255);
-        text-align: center;
-      }
-
       #banner {
-        width: 100%; /* Changed to 100% to fit the container */
         height: 360px;
+        width: 100%;
         object-fit: cover;
-      }
-
-      h2 {
-        font-family: Roboto, sans-serif; /* Added fallback font */
-        font-size: 32px;
-        color: rgb(0, 209, 360);
-        text-align: center;
-        font-weight: normal;
-      }
-
-      .bodytext {
-        font-family: Roboto;
-        color: rgb(80, 80, 80);
-      }
-
-      #container {
-        max-width: 720px;
-        margin: 0 auto 0 auto;
+        margin-bottom: 16px;
       }
     </style>
   </head>
   <body>
-    <div id = "container">
-      <h1>Jovian Careers</h1>
-      <img id="banner" src="https://991046a9-cb6a-4428-940e-d2aad506ef7e-00-15hrue1r22h49.kirk.replit.dev/static/bana.jpeg.jpg" alt="Banner Image">
-  
-      <h2>About Jovian</h2>
-      <p class="bodytext">
+    <div class="container">
+      <h1 class="text-center mt-2 mb-4">Jovian Careers</h1>
+      <img class="img-fluid" id="banner" src="https://991046a9-cb6a-4428-940e-d2aad506ef7e-00-15hrue1r22h49.kirk.replit.dev/static/bana.jpeg.jpg" alt="Banner Image">
+
+      <h2 class="text-center mt-2 mb-4">About Jovian</h2>
+      <p class="lead">
         Welcome to Jovian Careers, your premier destination for connecting talented job seekers with eager employers. We specialize in bridging the gap between qualified professionals and companies looking to fill key positions. Our platform features a wide range of job openings across various industries, ensuring that employers find the right fit for their needs and job seekers discover rewarding career opportunities. At Jovian Careers, we are committed to fostering meaningful employment connections that drive success for both individuals and businesses. Join us today and take the next step toward a brighter professional future.
       </p>
-  
-      <h2>Open Positions</h2> <!-- Corrected the closing tag -->
-      <p class="bodytext">TODO - Show the jobs here</p>
-      <div style = "text-align:center;">
-      <button>Contact Us</button>
-        <p>Copyright 2024,jovian</p>
-    </div>
+
+      <h2 class="text-center mt-2 mb-4">Open Positions</h2>
+      <div>
+        {% for job in jobs %}
+          {% include 'jobitem.html' %}
+        {% endfor %}
+      </div>
+      <div class="text-center">
+        <button class="btn btn-primary btn-lg">Contact Us</button>
+        <p class="mt-4">Copyright 2024, Jovian</p>
+      </div>
+    </div> <!-- Closing the container div -->
   </body>
 </html>
